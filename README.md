@@ -23,11 +23,12 @@ Then come to a default XML implementation:
 ```
 package org.example;
 
-public  class  XMLConfiguration  implements  SuperLoggerConfiguration {
-	 
-	 public  void  configure (String configFile) {
-    	   ......
-      }
+public class XMLConfiguration implements SuperLoggerConfiguration{
+
+	public void configure(String configFile) {
+		System.out.println("xml config load success");
+	}
+
 }
 ```
 
@@ -35,17 +36,23 @@ Then when we initialize and parse the configuration, we only need to call this X
 
 ```
 package org.example;
+import java.util.HashMap;
+import java.util.Map;
 
-public  class  LoggerFactory  {
+public class LoggerFactory {
+	
+	private static Map<Class<?>,SuperLoggerConfiguration> map = new HashMap<>();
+	
 	 static {
-        SuperLoggerConfiguration configuration = new XMLConfiguration();
-		configuration.configure(configFile);
-    }
-    
-    public  static  getLogger (Class clazz) {
-    	......
-    }
+		 SuperLoggerConfiguration configuration = new XMLConfiguration();
+		 map.put(configuration.getClass(), configuration);
+	 }
+	 
+	 public static SuperLoggerConfiguration getLogger(Class<?> clazz) {
+		 return map.get(clazz);
+	 }
 }
+
 ```
 
 This completes a basic model, which seems to be no problem. But the scalability is not very good, because if I want to customize/extend/rewrite the parsing function, I have to redefine the entry code, and the LoggerFactory has to be rewritten, which is not flexible enough and too intrusive.
