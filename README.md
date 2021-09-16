@@ -93,6 +93,37 @@ Let's first take a look at how to use JDK's SPI mechanism to solve the above sca
 
 Then get the implementation class of our SPI mechanism configuration through ServiceLoader:
 
+```
+package org.example;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.ServiceLoader;
+
+public class LoggerFactory {
+	
+	private static Map<Class<?>,SuperLoggerConfiguration> map = new HashMap<>();
+	
+	 static {
+		 ServiceLoader<SuperLoggerConfiguration> serviceLoader = ServiceLoader.load(SuperLoggerConfiguration.class);
+		 Iterator<SuperLoggerConfiguration> iterator = serviceLoader.iterator();
+		 while (iterator.hasNext()) {
+		    //Load and initialize the implementation class
+			SuperLoggerConfiguration configuration = iterator.next();
+		 	map.put(configuration.getClass(), configuration);
+		 }
+	 }
+	 
+	 public static SuperLoggerConfiguration getLogger(Class<?> clazz) {
+		 return map.get(clazz);
+	 }
+}
+
+```
+
+![https://pengfeinie.github.io/images/2021-09-16_185219.jpg](https://pengfeinie.github.io/images/2021-09-16_185219.jpg)
+
 ## 3. Dubbo SPI
 
 ## 4. Spring SPI
