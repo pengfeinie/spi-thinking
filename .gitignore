@@ -1,0 +1,7 @@
+/*.classpath
+/.settings
+/jdk-spi-mechanism-thinking/*.classpath
+/jdk-spi-mechanism-thinking/*.gitignore
+/jdk-spi-mechanism-thinking/*.project
+/jdk-spi-mechanism-thinking/.settings
+/*.project
