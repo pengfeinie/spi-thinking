@@ -9,3 +9,8 @@
 /spring-spi-mechanism-thinking/*.gitignore
 /spring-spi-mechanism-thinking/.settings
 /spring-spi-mechanism-thinking/*.project
+/target/
+/dubbo-spi-mechanism-thinking/*.classpath
+/dubbo-spi-mechanism-thinking/*.project
+/dubbo-spi-mechanism-thinking/.settings
+/dubbo-spi-mechanism-thinking/*.gitignore

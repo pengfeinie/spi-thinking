@@ -1,0 +1,2 @@
+org.example.HelloService=org.example.HelloServiceImpl1,\
+                         org.example.HelloServiceImpl2
