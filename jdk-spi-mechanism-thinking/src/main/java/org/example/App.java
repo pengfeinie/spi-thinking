@@ -1,12 +1,16 @@
 package org.example;
 
+import java.util.Iterator;
+import java.util.ServiceLoader;
 
 public class App {
 	
     public static void main( String[] args ) {
-    	SuperLogger logger1 = LoggerFactory.getLogger(XMLLogger.class);
-    	SuperLogger logger2 = LoggerFactory.getLogger(JsonLogger.class);
-    	logger1.configure("default file");
-    	logger2.configure("default file");
+	   	 ServiceLoader<SuperLogger> serviceLoader = ServiceLoader.load(SuperLogger.class);
+		 Iterator<SuperLogger> iterator = serviceLoader.iterator();
+		 while (iterator.hasNext()) {
+			SuperLogger logger = iterator.next();
+			logger.configure();
+		 }
     }
 }
