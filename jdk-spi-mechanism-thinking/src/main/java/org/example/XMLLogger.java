@@ -1,6 +1,6 @@
 package org.example;
 
-public class XMLConfiguration implements SuperLoggerConfiguration{
+public class XMLLogger implements SuperLogger{
 
 	public void configure(String configFile) {
 		System.out.println("xml config load success");

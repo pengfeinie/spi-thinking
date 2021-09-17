@@ -24,5 +24,6 @@
   </dependencies>
   <modules>
     <module>jdk-spi-mechanism-thinking</module>
+    <module>spring-spi-mechanism-thinking</module>
   </modules>
 </project>

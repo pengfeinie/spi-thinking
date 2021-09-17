@@ -1,6 +1,6 @@
 package org.example;
 
-public interface SuperLoggerConfiguration {
+public interface SuperLogger {
 
 	void  configure (String configFile);
 }

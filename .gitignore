@@ -5,3 +5,7 @@
 /jdk-spi-mechanism-thinking/*.project
 /jdk-spi-mechanism-thinking/.settings
 /*.project
+/spring-spi-mechanism-thinking/*.classpath
+/spring-spi-mechanism-thinking/*.gitignore
+/spring-spi-mechanism-thinking/.settings
+/spring-spi-mechanism-thinking/*.project
