@@ -18,3 +18,7 @@
 /spring-spi-mechanism-thinking2/*.project
 /spring-spi-mechanism-thinking2/*.gitignore
 /spring-spi-mechanism-thinking2/*.classpath
+/jdk-spi-mechanism-thinking2/*.classpath
+/jdk-spi-mechanism-thinking2/*.gitignore
+/jdk-spi-mechanism-thinking2/*.project
+/jdk-spi-mechanism-thinking2/.settings
