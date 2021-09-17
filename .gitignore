@@ -14,3 +14,7 @@
 /dubbo-spi-mechanism-thinking/*.project
 /dubbo-spi-mechanism-thinking/.settings
 /dubbo-spi-mechanism-thinking/*.gitignore
+/spring-spi-mechanism-thinking2/.settings
+/spring-spi-mechanism-thinking2/*.project
+/spring-spi-mechanism-thinking2/*.gitignore
+/spring-spi-mechanism-thinking2/*.classpath
