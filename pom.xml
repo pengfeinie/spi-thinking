@@ -23,9 +23,10 @@
     </dependency>
   </dependencies>
   <modules>
-    <module>jdk-spi-mechanism-thinking</module>
+    <module>jdk-spi-mechanism-thinking1</module>
     <module>spring-spi-mechanism-thinking</module>
     <module>dubbo-spi-mechanism-thinking</module>
     <module>spring-spi-mechanism-thinking2</module>
+    <module>jdk-spi-mechanism-thinking3</module>
   </modules>
 </project>

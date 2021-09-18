@@ -22,3 +22,12 @@
 /jdk-spi-mechanism-thinking2/*.gitignore
 /jdk-spi-mechanism-thinking2/*.project
 /jdk-spi-mechanism-thinking2/.settings
+/jdk-spi-mechanism-thinking1/*.classpath
+/jdk-spi-mechanism-thinking1/*.gitignore
+/jdk-spi-mechanism-thinking1/*.project
+/jdk-spi-mechanism-thinking1/.settings/*.prefs
+/jdk-spi-mechanism-thinking3/*.classpath
+/jdk-spi-mechanism-thinking3/*.project
+/jdk-spi-mechanism-thinking3/.settings/*.prefs
+/jdk-spi-mechanism-thinking1/.settings
+/jdk-spi-mechanism-thinking3/*.gitignore
