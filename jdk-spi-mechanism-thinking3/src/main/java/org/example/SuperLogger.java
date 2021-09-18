@@ -1,6 +1,6 @@
 package org.example;
 
-import org.example.frameworkanotation.Spi;
+import org.example.framework.anotation.Spi;
 
 @Spi
 public interface SuperLogger {

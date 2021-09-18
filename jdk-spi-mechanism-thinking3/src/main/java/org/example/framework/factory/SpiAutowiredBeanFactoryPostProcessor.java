@@ -1,7 +1,7 @@
 package org.example.framework.factory;
 
 
-import org.example.frameworkanotation.SpiAutowired;
+import org.example.framework.anotation.SpiAutowired;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor;

@@ -3,9 +3,9 @@ package org.example.framework.spring;
 
 import cn.hutool.core.map.MapUtil;
 
+import org.example.framework.anotation.EnableSpi;
+import org.example.framework.anotation.Spi;
 import org.example.framework.factory.SpiFactory;
-import org.example.frameworkanotation.EnableSpi;
-import org.example.frameworkanotation.Spi;
 import org.reflections.Reflections;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanFactory;

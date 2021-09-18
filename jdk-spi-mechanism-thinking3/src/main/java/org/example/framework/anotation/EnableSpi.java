@@ -1,4 +1,4 @@
-package org.example.frameworkanotation;
+package org.example.framework.anotation;
 
 
 import org.example.framework.spring.register.SpiRegister;

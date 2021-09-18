@@ -4,10 +4,10 @@ package org.example.framework.spring.register;
 import cn.hutool.core.map.MapUtil;
 
 import org.apache.commons.lang3.StringUtils;
+import org.example.framework.anotation.EnableSpi;
+import org.example.framework.anotation.Spi;
 import org.example.framework.factory.SpiFactory;
 import org.example.framework.plugin.proxy.SpiProxy;
-import org.example.frameworkanotation.EnableSpi;
-import org.example.frameworkanotation.Spi;
 import org.reflections.Reflections;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanFactory;
