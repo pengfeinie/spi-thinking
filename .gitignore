@@ -31,3 +31,7 @@
 /jdk-spi-mechanism-thinking3/.settings/*.prefs
 /jdk-spi-mechanism-thinking1/.settings
 /jdk-spi-mechanism-thinking3/*.gitignore
+/jdk-spi-mechanism-integration-spring2/*.classpath
+/jdk-spi-mechanism-integration-spring2/*.gitignore
+/jdk-spi-mechanism-integration-spring2/*.project
+/jdk-spi-mechanism-integration-spring2/.settings/*.prefs

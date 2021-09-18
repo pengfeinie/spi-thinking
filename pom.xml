@@ -28,5 +28,6 @@
     <module>dubbo-spi-mechanism-thinking</module>
     <module>spring-spi-mechanism-thinking2</module>
     <module>jdk-spi-mechanism-thinking3</module>
+    <module>jdk-spi-mechanism-integration-spring2</module>
   </modules>
 </project>
