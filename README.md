@@ -11,10 +11,9 @@ For example, now we have designed a brand new logging framework: **super-logger*
 ```
 package org.example;
 
-public  interface  SuperLoggerConfiguration  {
+public  interface  SuperLogger  {
 
-	 void  configure (String configFile) ;
-	 
+	 void  configure();
 }
 ```
 
@@ -23,41 +22,19 @@ Then come to a default XML implementation:
 ```
 package org.example;
 
-public class XMLConfiguration implements SuperLoggerConfiguration{
+public class XMLLogger implements SuperLogger{
 
-	public void configure(String configFile) {
+	public void configure() {
 		System.out.println("xml config load success");
 	}
-
 }
 ```
 
-Then when we initialize and parse the configuration, we only need to call this XMLConfiguration to parse the XML configuration file.
+Then when we initialize and parse the logger, we only need to call this XMLLogger to parse the XML logger.
 
-```
-package org.example;
-import java.util.HashMap;
-import java.util.Map;
+This completes a basic model, which seems to be no problem. But the scalability is not very good, because if I want to customize/extend/rewrite the parsing function, I have to redefine the entry code.
 
-public class LoggerFactory {
-	
-	private static Map<Class<?>,SuperLoggerConfiguration> map = new HashMap<>();
-	
-	 static {
-		 SuperLoggerConfiguration configuration = new XMLConfiguration();
-		 map.put(configuration.getClass(), configuration);
-	 }
-	 
-	 public static SuperLoggerConfiguration getLogger(Class<?> clazz) {
-		 return map.get(clazz);
-	 }
-}
-
-```
-
-This completes a basic model, which seems to be no problem. But the scalability is not very good, because if I want to customize/extend/rewrite the parsing function, I have to redefine the entry code, and the LoggerFactory has to be rewritten, which is not flexible enough and too intrusive.
-
-For example, if the user wants to add a yml file as a log configuration file, then only need to create a new YAMLConfiguration and implement SuperLoggerConfiguration. But... how to inject? How to use the newly created YAMLConfiguration in LoggerFactory? Is it possible that even LoggerFactory has been rewritten?
+For example, if the user wants to add a yml file as a log configuration file, then only need to create a new YAMLLogger and implement SuperLogger. But... how to inject? 
 
 If you use the SPI mechanism, this matter is very simple, and you can easily complete the expansion function of this entry.
 
@@ -95,34 +72,21 @@ Then get the implementation class of our SPI mechanism configuration through Ser
 
 ```
 package org.example;
-
-import java.util.HashMap;
 import java.util.Iterator;
-import java.util.Map;
 import java.util.ServiceLoader;
 
-public class LoggerFactory {
+public class App {
 	
-	private static Map<Class<?>,SuperLoggerConfiguration> map = new HashMap<>();
-	
-	 static {
-		 ServiceLoader<SuperLoggerConfiguration> serviceLoader = ServiceLoader.load(SuperLoggerConfiguration.class);
-		 Iterator<SuperLoggerConfiguration> iterator = serviceLoader.iterator();
+    public static void main( String[] args ) {
+	   	 ServiceLoader<SuperLogger> serviceLoader=ServiceLoader.load(SuperLogger.class);
+		 Iterator<SuperLogger> iterator = serviceLoader.iterator();
 		 while (iterator.hasNext()) {
-		    //Load and initialize the implementation class
-			SuperLoggerConfiguration configuration = iterator.next();
-		 	map.put(configuration.getClass(), configuration);
+			SuperLogger logger = iterator.next();
+			logger.configure();
 		 }
-	 }
-	 
-	 public static SuperLoggerConfiguration getLogger(Class<?> clazz) {
-		 return map.get(clazz);
-	 }
+    }
 }
-
 ```
-
-![https://pengfeinie.github.io/images/2021-09-16_185219.jpg](https://pengfeinie.github.io/images/2021-09-16_185219.jpg)
 
 ## 3. Dubbo SPI
 
