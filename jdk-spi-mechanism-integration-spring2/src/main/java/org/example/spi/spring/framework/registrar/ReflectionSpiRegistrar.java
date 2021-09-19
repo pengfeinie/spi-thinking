@@ -15,7 +15,7 @@ import org.springframework.util.ClassUtils;
 import org.springframework.util.CollectionUtils;
 import java.util.*;
 
-public class SpiRegistrar implements ImportBeanDefinitionRegistrar,BeanFactoryAware {
+public class ReflectionSpiRegistrar implements ImportBeanDefinitionRegistrar,BeanFactoryAware {
 
 
     private DefaultListableBeanFactory beanFactory;
