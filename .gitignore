@@ -37,3 +37,7 @@
 /jdk-spi-mechanism-integration-spring2/.settings/*.prefs
 /jdk-spi-mechanism-thinking2/target/classes/META-INF
 /jdk-spi-mechanism-thinking2/target/classes/org/example/*.class
+/jdk-spi-mechanism-integration-spring1/*.classpath
+/jdk-spi-mechanism-integration-spring1/*.gitignore
+/jdk-spi-mechanism-integration-spring1/*.project
+/jdk-spi-mechanism-integration-spring1/.settings

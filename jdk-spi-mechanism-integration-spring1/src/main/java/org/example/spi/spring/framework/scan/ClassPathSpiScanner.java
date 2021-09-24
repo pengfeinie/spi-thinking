@@ -1,4 +1,4 @@
-package org.example.spi.spring.framework.registrar;
+package org.example.spi.spring.framework.scan;
 
 import java.lang.annotation.Annotation;
 import java.util.Set;
