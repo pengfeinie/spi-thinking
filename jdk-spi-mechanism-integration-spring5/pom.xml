@@ -7,8 +7,8 @@
     <artifactId>spi-mechanism-thinking</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>jdk-spi-mechanism-integration-spring3</artifactId>
-  <name>jdk-spi-mechanism-integration-spring3</name>
+  <artifactId>jdk-spi-mechanism-integration-spring5</artifactId>
+  <name>jdk-spi-mechanism-integration-spring5</name>
   <url>http://maven.apache.org</url>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
