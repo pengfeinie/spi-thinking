@@ -49,3 +49,7 @@
 /jdk-spi-mechanism-integration-spring5/.settings
 /jdk-spi-mechanism-integration-spring5/*.project
 /jdk-spi-mechanism-integration-spring5/*.gitignore
+/jdk-spi-mechanism-integration-spring4/*.classpath
+/jdk-spi-mechanism-integration-spring4/*.gitignore
+/jdk-spi-mechanism-integration-spring4/*.project
+/jdk-spi-mechanism-integration-spring4/.settings/*.prefs
