@@ -7,6 +7,7 @@ public class App {
 	
     @SuppressWarnings("resource")
 	public static void main( String[] args ){
+    	//FactoryBean
     	 AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
 		 HelloService helloService = ac.getBean(HelloService.class);
 		 helloService.hello();

@@ -1,20 +1,16 @@
 package org.example.spi.spring.framework.factory;
 
-import java.util.Iterator;
-import java.util.ServiceLoader;
 
 import org.springframework.beans.factory.FactoryBean;
+
+import cn.hutool.core.util.ServiceLoaderUtil;
 
 public class SpiFactoryBean<T> implements FactoryBean<T> {
 	
 	private Class<? extends T> spiInterface;
 	
-	@SuppressWarnings("unchecked")
 	public T getObject() throws Exception {
-		ServiceLoader<T> serviceLoader = (ServiceLoader<T>) ServiceLoader.load(spiInterface);
-		Iterator<T> iterator = serviceLoader.iterator();
-		T logger = iterator.next();
-		return logger;
+		return ServiceLoaderUtil.loadFirstAvailable(spiInterface);
 	}
 
 	public Class<? extends T> getObjectType() {
