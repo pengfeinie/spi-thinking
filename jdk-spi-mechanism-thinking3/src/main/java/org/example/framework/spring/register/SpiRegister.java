@@ -34,26 +34,26 @@ public class SpiRegister implements ImportBeanDefinitionRegistrar,BeanFactoryAwa
     }
 
     private void registerSingleton(AnnotationMetadata importingClassMetadata) {
-        Class<?> spiInterface = getSpiInterface(importingClassMetadata);
-        if(spiInterface != null){
-
-            Map<String, ?> spiMap = null;
-			try {
-				spiMap = new SpiFactory().getSpiMap(spiInterface);
-			} catch (InstantiationException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (IllegalAccessException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-            if(MapUtil.isNotEmpty(spiMap)){
-                spiMap.forEach((beanName,bean) -> {
-                    registerSpiInterfaceSingleton(spiInterface, bean);
-                    beanFactory.registerSingleton(beanName,bean);
-                });
-            }
-
+        List<Class<?>> spiInterfaceList = getSpiInterfaceList(importingClassMetadata);
+        if (!CollectionUtils.isEmpty(spiInterfaceList)) {
+    		for (Class<?> spiInterface : spiInterfaceList) {
+    			Map<String, ?> spiMap = null;
+    			try {
+    				spiMap = new SpiFactory().getSpiMap(spiInterface);
+    			} catch (InstantiationException e) {
+    				// TODO Auto-generated catch block
+    				e.printStackTrace();
+    			} catch (IllegalAccessException e) {
+    				// TODO Auto-generated catch block
+    				e.printStackTrace();
+    			}
+                if(MapUtil.isNotEmpty(spiMap)){
+                    spiMap.forEach((beanName,bean) -> {
+                        registerSpiInterfaceSingleton(spiInterface, bean);
+                        beanFactory.registerSingleton(beanName,bean);
+                    });
+                }
+    		}
         }
     }
 
@@ -74,22 +74,22 @@ public class SpiRegister implements ImportBeanDefinitionRegistrar,BeanFactoryAwa
             beanFactory.registerSingleton(spiInterfaceBeanName,bean);
         }
     }
-
-    private Class<?> getSpiInterface(AnnotationMetadata importingClassMetadata) {
+    
+    private List<Class<?>> getSpiInterfaceList(AnnotationMetadata importingClassMetadata) {
         List<String> basePackages = getBasePackages(importingClassMetadata);
+        List<Class<?>> spiClazzList = new ArrayList<Class<?>>();
         for (String basePackage : basePackages) {
             Reflections reflections = new Reflections(basePackage);
             Set<Class<?>> spiClasses = reflections.getTypesAnnotatedWith(Spi.class);
             if(!CollectionUtils.isEmpty(spiClasses)){
                 for (Class<?> spiClass : spiClasses) {
                     if(spiClass.isInterface()){
-                        return spiClass;
+                    	spiClazzList.add(spiClass);
                     }
                 }
             }
         }
-
-        return null;
+        return spiClazzList;
     }
 
     private List<String> getBasePackages(AnnotationMetadata importingClassMetadata) {

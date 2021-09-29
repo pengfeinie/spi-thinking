@@ -10,5 +10,7 @@ public class App {
 		 AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
 		 HelloService logger = ac.getBean(HelloService.class);
 		 logger.hello();
-    }
+		 SuperLogger superLogger = ac.getBean(SuperLogger.class);
+		 superLogger.configure();
+	}
 }
