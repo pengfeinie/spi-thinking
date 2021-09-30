@@ -1,0 +1,2 @@
+xmlLogger = org.example.logger.XMLLogger
+jsonLogger = org.example.logger.JsonLogger

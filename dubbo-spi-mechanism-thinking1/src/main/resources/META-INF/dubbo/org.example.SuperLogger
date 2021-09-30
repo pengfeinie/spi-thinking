@@ -1,2 +1,0 @@
-xmlLogger = org.example.XMLLogger
-jsonLogger = org.example.JsonLogger

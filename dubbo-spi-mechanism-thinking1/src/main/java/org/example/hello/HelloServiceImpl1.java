@@ -1,6 +1,7 @@
-package org.example;
+package org.example.hello;
 
 import org.apache.dubbo.common.URL;
+import org.example.logger.SuperLogger;
 
 public class HelloServiceImpl1 implements HelloService{
 

@@ -1,4 +1,4 @@
-package org.example;
+package org.example.logger;
 
 import org.apache.dubbo.common.URL;
 import org.apache.dubbo.common.extension.Adaptive;
