@@ -80,3 +80,8 @@
 /spring-spi-mechanism-integration-spring1/*.gitignore
 /spring-spi-mechanism-integration-spring1/*.project
 /spring-spi-mechanism-integration-spring1/*.iml
+/dubbo-spi-mechanism-ingegration-spring1/*.classpath
+/dubbo-spi-mechanism-ingegration-spring1/*.gitignore
+/dubbo-spi-mechanism-ingegration-spring1/*.project
+/dubbo-spi-mechanism-ingegration-spring1/.settings
+/dubbo-spi-mechanism-ingegration-spring1/dubbo-spi-mechanism-ingegration-spring1.iml
