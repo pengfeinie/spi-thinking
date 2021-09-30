@@ -1,3 +1,2 @@
 dogServiceImpl = org.example.animal.DogServiceImpl
 animalServiceAopProxy = org.example.animal.AnimalServiceAopProxy
-animalServiceAopProxy2 = org.example.animal.AnimalServiceAopProxy2
