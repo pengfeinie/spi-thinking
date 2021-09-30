@@ -13,7 +13,7 @@ public class HelloServiceImpl1 implements HelloService{
 
 	@Override
 	public void hello(URL url) {
-		superLogger.configure();
+		superLogger.configure(url);
 		System.out.println("hello 1");
 	}
 

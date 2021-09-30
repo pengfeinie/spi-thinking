@@ -1,6 +1,10 @@
 package org.example;
 
 
+import java.util.HashMap;
+import java.util.Map;
+
+import org.apache.dubbo.common.URL;
 import org.apache.dubbo.common.extension.ExtensionLoader;
 
 public class App {
@@ -16,6 +20,9 @@ public class App {
     	
     	ExtensionLoader<HelloService> helloServiceExtensionLoader = ExtensionLoader.getExtensionLoader(HelloService.class);
     	HelloService helloservice1 = helloServiceExtensionLoader.getExtension("helloServiceImpl1");
-    	System.out.println(1);
+    	 Map<String,String> map = new HashMap<>();
+    	    map.put("SuperLogger.configure","xmlLogger");
+    	    URL url = new URL("","",1,map);
+    	helloservice1.hello(url);
 	}
 }

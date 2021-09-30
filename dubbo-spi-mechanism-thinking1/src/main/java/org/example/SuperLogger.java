@@ -9,6 +9,6 @@ public interface SuperLogger {
 	
 	void  configure ();
 
-	@Adaptive
+	@Adaptive("SuperLogger.configure")
 	void  configure (URL url);
 }

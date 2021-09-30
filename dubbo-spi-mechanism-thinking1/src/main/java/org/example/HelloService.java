@@ -7,7 +7,7 @@ import org.apache.dubbo.common.extension.SPI;
 @SPI
 public interface HelloService {
 	
-	@Adaptive("xmlLogger")
+	@Adaptive("SuperLogger.configure")
 	void hello(URL url);
 
 }
