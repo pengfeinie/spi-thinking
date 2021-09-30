@@ -70,3 +70,8 @@
 /spring-spi-mechanism-thinking/*.iml
 /spring-spi-mechanism-thinking2/*.iml
 /*.iml
+/spring-spi-mechanism-thinking1/.settings
+/spring-spi-mechanism-thinking1/*.classpath
+/spring-spi-mechanism-thinking1/*.gitignore
+/spring-spi-mechanism-thinking1/*.project
+/spring-spi-mechanism-thinking1/spring-spi-mechanism-thinking.iml
