@@ -75,3 +75,8 @@
 /spring-spi-mechanism-thinking1/*.gitignore
 /spring-spi-mechanism-thinking1/*.project
 /spring-spi-mechanism-thinking1/spring-spi-mechanism-thinking.iml
+/spring-spi-mechanism-integration-spring1/.settings
+/spring-spi-mechanism-integration-spring1/*.classpath
+/spring-spi-mechanism-integration-spring1/*.gitignore
+/spring-spi-mechanism-integration-spring1/*.project
+/spring-spi-mechanism-integration-spring1/*.iml
