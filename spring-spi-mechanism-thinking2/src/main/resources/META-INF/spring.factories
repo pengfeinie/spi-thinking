@@ -1,2 +1,3 @@
-org.example.SuperLogger=org.example.XMLLogger,\
-                         org.example.JsonLogger
+org.example.EnableSpiAutoConfiguration=org.example.XMLLogger,\
+                         org.example.JsonLogger,\
+                         org.example.HelloServiceImpl1

@@ -10,6 +10,5 @@ public class App {
     	for (HelloService helloService : list) {
     		helloService.hello();
     	}
-        System.out.println( "Hello World!" );
     }
 }

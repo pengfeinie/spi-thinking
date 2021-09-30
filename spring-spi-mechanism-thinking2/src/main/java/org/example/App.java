@@ -15,5 +15,11 @@ public class App {
 			SuperLogger logger = entry.getValue();
 			logger.configure();
 		}
+		Map<String, HelloService> helloBeanMap = ac.getBeansOfType(HelloService.class);
+		Set<Map.Entry<String, HelloService>> helloEntries = helloBeanMap.entrySet();
+		for (Map.Entry<String, HelloService> entry : helloEntries) {
+			HelloService helloService = entry.getValue();
+			helloService.hello();
+		}
     }
 }

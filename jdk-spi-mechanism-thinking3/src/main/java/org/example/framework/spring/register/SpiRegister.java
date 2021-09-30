@@ -24,13 +24,11 @@ import java.util.*;
 
 public class SpiRegister implements ImportBeanDefinitionRegistrar,BeanFactoryAware {
 
-
     private DefaultListableBeanFactory beanFactory;
 
     @Override
     public void registerBeanDefinitions(AnnotationMetadata importingClassMetadata, BeanDefinitionRegistry registry) {
         registerSingleton(importingClassMetadata);
-
     }
 
     private void registerSingleton(AnnotationMetadata importingClassMetadata) {
