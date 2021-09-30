@@ -11,8 +11,8 @@ public class App {
 	
     public static void main( String[] args ){
     	ExtensionLoader<SuperLogger> extensionLoader = ExtensionLoader.getExtensionLoader(SuperLogger.class);
-    	//SuperLogger defaultLogger = extensionLoader.getDefaultExtension();
-    	//defaultLogger.configure();
+    	SuperLogger defaultLogger = extensionLoader.getDefaultExtension();
+    	defaultLogger.configure();
     	SuperLogger xmlLogger = extensionLoader.getExtension("xmlLogger");
     	xmlLogger.configure();
     	SuperLogger jsonLogger = extensionLoader.getExtension("jsonLogger");
