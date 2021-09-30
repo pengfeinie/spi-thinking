@@ -1,4 +1,4 @@
-package org.example;
+package org.example.spi.spring;
 
 import java.util.List;
 
