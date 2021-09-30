@@ -10,7 +10,7 @@ public class XMLLogger implements SuperLogger{
 
 	@Override
 	public void configure(URL url) {
-		System.out.println("xml config load success");
+		System.out.println("@Adaptive xml config load success");
 		
 	}
 

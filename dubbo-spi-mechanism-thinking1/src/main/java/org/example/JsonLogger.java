@@ -10,7 +10,7 @@ public class JsonLogger implements SuperLogger{
 
 	@Override
 	public void configure(URL url) {
-		System.out.println("json config load success");
+		System.out.println("@Adaptive json config load success");
 	}
 
 }
