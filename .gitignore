@@ -85,3 +85,8 @@
 /dubbo-spi-mechanism-ingegration-spring1/*.project
 /dubbo-spi-mechanism-ingegration-spring1/.settings
 /dubbo-spi-mechanism-ingegration-spring1/dubbo-spi-mechanism-ingegration-spring1.iml
+/jdk-spi-mechanism-integration-spring6/*.classpath
+/jdk-spi-mechanism-integration-spring6/*.gitignore
+/jdk-spi-mechanism-integration-spring6/.settings
+/jdk-spi-mechanism-integration-spring6/*.iml
+/jdk-spi-mechanism-integration-spring6/*.project
