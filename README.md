@@ -148,7 +148,67 @@ public class SpiBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
 }
 ```
 
+#### 2.3.2 FactoryBean
 
+```
+package org.example.spi.spring.framework.factory;
+
+
+import org.springframework.beans.factory.FactoryBean;
+
+import cn.hutool.core.util.ServiceLoaderUtil;
+
+public class SpiFactoryBean<T> implements FactoryBean<T> {
+	
+	private Class<? extends T> spiInterface;
+	
+	public T getObject() throws Exception {
+		return ServiceLoaderUtil.loadFirstAvailable(spiInterface);
+	}
+
+	public Class<? extends T> getObjectType() {
+		return spiInterface;
+	}
+
+	public boolean isSingleton() {
+		return true;
+	}
+
+	public Class<? extends T> getLoggerInterface() {
+		return spiInterface;
+	}
+
+	public void setSpiInterface(Class<? extends T> spiInterface) {
+		this.spiInterface = spiInterface;
+	}
+}
+```
+
+```
+package org.example;
+
+import org.example.spi.spring.framework.factory.SpiFactoryBean;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class AppConfig {
+
+	@Bean
+	public SpiFactoryBean<SuperLogger> superLogger(){
+		SpiFactoryBean<SuperLogger> superLogger = new SpiFactoryBean<SuperLogger>();
+		superLogger.setSpiInterface(SuperLogger.class);
+		return superLogger;
+	}
+	
+	@Bean
+	public SpiFactoryBean<HelloService> helloService(){
+		SpiFactoryBean<HelloService> helloService = new SpiFactoryBean<HelloService>();
+		helloService.setSpiInterface(HelloService.class);
+		return helloService;
+	}
+}
+```
 
 ## 3. Dubbo SPI
 
