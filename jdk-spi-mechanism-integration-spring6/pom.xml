@@ -7,7 +7,7 @@
     <artifactId>spi-mechanism-thinking</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>jdk-spi-mechanism-thinking3</artifactId>
+  <artifactId>jdk-spi-mechanism-integration-spring6</artifactId>
   <name>jdk-spi-mechanism-thinking3</name>
   <url>http://maven.apache.org</url>
   <properties>
