@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.example</groupId>
-  <artifactId>spi-mechanism-thinking</artifactId>
+  <artifactId>spi-thinking</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
 
-  <name>spi-mechanism-thinking</name>
+  <name>spi-thinking</name>
   <url>http://maven.apache.org</url>
 
   <properties>
@@ -23,16 +23,31 @@
     </dependency>
   </dependencies>
   <modules>
-    <module>dubbo-spi-mechanism-ingegration-spring1</module>
-    <module>dubbo-spi-mechanism-thinking1</module>
-    <module>jdk-spi-mechanism-integration-spring1</module>
-    <module>jdk-spi-mechanism-integration-spring2</module>
-    <module>jdk-spi-mechanism-integration-spring3</module>
-    <module>jdk-spi-mechanism-integration-spring4</module>
-    <module>jdk-spi-mechanism-integration-spring5</module>
-    <module>jdk-spi-mechanism-integration-spring6</module>
-    <module>jdk-spi-mechanism-thinking1</module>
-    <module>spring-spi-mechanism-integration-spring1</module>
-    <module>spring-spi-mechanism-thinking1</module>
+    <module>dubbo-spi-thinking</module>
+    <module>dubbo-spi-thinking1-spring-ingegration</module>
+    <module>jdk-spi-thinking</module>
+    <module>jdk-spi-thinking1-spring-integration</module>
+    <module>jdk-spi-thinking2-spring-integration</module>
+    <module>jdk-spi-thinking3-spring-integration</module>
+    <module>jdk-spi-thinking4-spring-integration</module>
+    <module>jdk-spi-thinking5-spring-integration</module>
+    <module>jdk-spi-thinking6-spring-integration</module>
+    <module>spring-spi-thinking</module>
+    <module>spring-spi-thinking1-spring-integration</module>
+
   </modules>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.1</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>
